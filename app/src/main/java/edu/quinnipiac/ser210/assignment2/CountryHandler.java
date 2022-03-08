@@ -11,7 +11,7 @@ public class CountryHandler {
     public CountryHandler() {
 
         int i = 0;
-        for (int yr = 0; yr <= NUMBER_OF_COUNTRIES; yr++)
+        for (int yr = 0; yr < NUMBER_OF_COUNTRIES; yr++)
             countries[i++] = Integer.toString(yr);
     }
 
