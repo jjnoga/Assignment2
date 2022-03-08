@@ -4,4 +4,8 @@
 	<string name="select_country2">Select 2nd Country:</string>
 	<string name="select_stat">Select Stat:</string>
 	<string name="button_text">Compare Countries</string>
+	<string name="you_selected">You selected:</string>
+	<string name="placeholder">Nothing</string>
+	<string name="back">Go back</string>
+	<string name="welcome">Welcome! Please select 2 countries and a statistic to compare.</string>
 </resources>

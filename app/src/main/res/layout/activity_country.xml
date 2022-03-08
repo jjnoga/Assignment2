@@ -1,9 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CountryActivity">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".CountryActivity">
 
+	<TextView
+		android:id="@+id/you_selected"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:text="@string/you_selected"
+		android:textSize="50dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:id="@+id/statName"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="103dp"
+		android:layout_marginTop="10dp"
+		android:layout_marginEnd="104dp"
+		android:text="@string/placeholder"
+		android:textSize="25dp"
+		app:layout_constraintEnd_toEndOf="@+id/stat1"
+		app:layout_constraintStart_toStartOf="@+id/country1"
+		app:layout_constraintTop_toBottomOf="@+id/you_selected" />
+
+	<TextView
+		android:id="@+id/country1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="41dp"
+		android:text="@string/placeholder"
+		android:textSize="25dp"
+		app:layout_constraintBottom_toBottomOf="@+id/stat1"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/stat1" />
+
+	<TextView
+		android:id="@+id/country2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="41dp"
+		android:text="@string/placeholder"
+		android:textSize="25dp"
+		app:layout_constraintBaseline_toBaselineOf="@+id/stat2"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<TextView
+		android:id="@+id/stat1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="66dp"
+		android:text="@string/placeholder"
+		android:textSize="25dp"
+		app:layout_constraintEnd_toEndOf="@+id/stat2"
+		app:layout_constraintStart_toStartOf="@+id/stat2"
+		app:layout_constraintTop_toBottomOf="@+id/statName" />
+
+	<TextView
+		android:id="@+id/stat2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="234dp"
+		android:layout_marginEnd="75dp"
+		android:layout_marginBottom="235dp"
+		android:text="@string/placeholder"
+		android:textSize="25dp"
+		app:layout_constraintBottom_toBottomOf="@+id/button2"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/you_selected" />
+
+	<Button
+		android:id="@+id/button2"
+		android:layout_width="155dp"
+		android:layout_height="84dp"
+		android:layout_marginBottom="145dp"
+		android:text="@string/back"
+		android:onClick="goBack"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
