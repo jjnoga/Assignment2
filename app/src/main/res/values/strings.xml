@@ -1,5 +1,7 @@
 <resources>
 	<string name="app_name">Assignment2</string>
-	<string name="select_country">Select Country:</string>
+	<string name="select_country1">Select 1st Country:</string>
+	<string name="select_country2">Select 2nd Country:</string>
 	<string name="select_stat">Select Stat:</string>
+	<string name="button_text">Compare Countries</string>
 </resources>
