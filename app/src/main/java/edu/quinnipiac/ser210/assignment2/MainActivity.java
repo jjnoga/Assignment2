@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         //TODO: Add countries and stats from API to spinner
         country1.setAdapter(countryAdapter);
         country2.setAdapter(countryAdapter);
+
+        ArrayAdapter<String> statAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countryHandler.stats);
+        stat.setAdapter(statAdapter);
     }
 
     public void onClick(View view)
@@ -35,7 +38,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         //TODO: Get items from spinners
+        String c1 = (String) country1.getSelectedItem();
+        String c2 = (String) country2.getSelectedItem();
+        String sStat = (String) stat.getSelectedItem();
+
         //TODO: intent.putExtra
+
+        intent.putExtra("country_1", c1);
+        intent.putExtra("country_2", c2);
+        intent.putExtra("chosenStat", sStat);
         startActivity(intent);
     }
 }

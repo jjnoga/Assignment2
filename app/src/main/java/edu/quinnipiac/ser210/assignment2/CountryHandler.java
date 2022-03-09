@@ -9,6 +9,8 @@ public class CountryHandler {
     private String[] countriesList = countryClass.getCountries();
     private final int NUMBER_OF_COUNTRIES = countriesList.length;
     public String[] countries = new String[NUMBER_OF_COUNTRIES];
+    public String[] stats = new String[]{"Capital", "Region", "GDP", "Population", "Population Density",
+            "Currency", "Country Surface Area", "Male Lifespan", "Female Lifespan"};
 
 
     public CountryHandler() {
