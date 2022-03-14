@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Spinner country1, country2, stat;
     String c1, c2, sStat;
     private String url1 = "country-by-api-ninjas.p.rapidapi.com/v1/";
+    private String key = null; //TODO:  Add key properly.  Github yelled at me for it before.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 URL url = new URL(url1 + strings[0]);
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
-                urlConnection.setRequestProperty("X-RapidAPI-Key", "249317e119mshfba3d2aa469cd90p1ebc18jsnc5f619ca7ff8");
+                urlConnection.setRequestProperty("X-RapidAPI-Key", key);
                 urlConnection.connect();
 
                 InputStream in = urlConnection.getInputStream();
