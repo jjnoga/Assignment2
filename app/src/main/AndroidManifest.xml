@@ -13,7 +13,8 @@
         android:theme="@style/Theme.Assignment2">
         <activity
             android:name=".CountryActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Assignment2.NoActionBar"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
