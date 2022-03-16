@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     class FetchCountryStat extends AsyncTask<String, Void, String>
     {
-
+        //Task to complete in a separate thread
         @SuppressLint("RestrictedApi")
         @Override
         protected String doInBackground(String... strings)
@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             try
             {
                 //String str = strings[0].replaceAll(" ", "_");
+                //Connecting both urls based on the selected country
                 URL url = new URL(url1 + strings[0]);
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
@@ -132,11 +133,11 @@ public class MainActivity extends AppCompatActivity {
             return stat1;
         }
 
+        //Task to accomplish after the data has been retrieved
         @Override
         protected void onPostExecute(String s)
         {
                 Intent intent = new Intent(MainActivity.this, CountryActivity.class);
-
 
                 intent.putExtra("country_1", c1);
                 intent.putExtra("country_2", c2);
@@ -147,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        //Method that calls the Handler to get the data
         private String getStringFromBuffer(BufferedReader reader) throws Exception
         {
             StringBuffer buffer = new StringBuffer();
