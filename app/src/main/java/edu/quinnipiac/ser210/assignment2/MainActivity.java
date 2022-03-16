@@ -141,7 +141,45 @@ public class MainActivity extends AppCompatActivity {
                     return null;
                 }
             }
-            return countryHandler.getCountryCapital(buffer.toString());
+
+            String result = "";
+            if (sStat.equals("Capital"))
+            {
+                result = countryHandler.getCountryCapital(buffer.toString());
+            }
+            else if (sStat.equals("Region"))
+            {
+                result = countryHandler.getCountryRegion(buffer.toString());
+            }
+            else if (sStat.equals("GDP"))
+            {
+                result = countryHandler.getCountryGDP(buffer.toString());
+            }
+            else if (sStat.equals("Population"))
+            {
+                result = countryHandler.getCountryPopulation(buffer.toString());
+            }
+            else if (sStat.equals("Population Density"))
+            {
+                result = countryHandler.getCountryPopulationDensity(buffer.toString());
+            }
+            else if (sStat.equals("Currency"))
+            {
+                result = countryHandler.getCountryCurrency(buffer.toString());
+            }
+            else if (sStat.equals("Surface Area"))
+            {
+                result = countryHandler.getCountrySurfaceArea(buffer.toString());
+            }
+            else if (sStat.equals("Male Lifespan"))
+            {
+                result = countryHandler.getCountryMaleLifespan(buffer.toString());
+            }
+            else if (sStat.equals("Female Lifespan"))
+            {
+                result = countryHandler.getCountryFemaleLifespan(buffer.toString());
+            }
+            return result;
         }
 
     }
