@@ -40,7 +40,7 @@ public class CountryActivity extends AppCompatActivity {
         country2 = (String) getIntent().getExtras().get("country_2");
         sStat = (String) getIntent().getExtras().get("chosenStat");
         stat1 = (String) getIntent().getExtras().get("stat_1");
-        stat2 = (String) getIntent().getExtras().get("sStat");
+        stat2 = (String) getIntent().getExtras().get("stat_2");
 
         TextView c1 = (TextView) findViewById(R.id.country1);
         TextView c2 = (TextView) findViewById(R.id.country2);
@@ -48,8 +48,8 @@ public class CountryActivity extends AppCompatActivity {
         TextView s1 = (TextView) findViewById(R.id.stat1);
         TextView s2 = (TextView) findViewById(R.id.stat2);
 
-        c1.setText(country1);
-        c2.setText(country2);
+        c1.setText(country1 + ":");
+        c2.setText(country2 + ":");
         statName.setText(sStat);
         s1.setText(stat1);
         s2.setText(stat2);

@@ -23,9 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     CountryHandler countryHandler = new CountryHandler();
     Spinner country1, country2, stat;
-    String c1, c2, sStat;
+    String c1, c2, sStat, s1, s2;
     private String url1 = "https://api.api-ninjas.com/v1/country?name=";
-    private String key = null; //TODO:  Add key properly.  Github yelled at me for it before.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +60,9 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... strings)
         {
             HttpURLConnection urlConnection = null;
+            HttpURLConnection urlConnection2 = null;
             BufferedReader reader = null;
+            BufferedReader reader2 = null;
             String stat1 = "";
             String stat2 = "";
             try
@@ -73,11 +74,23 @@ public class MainActivity extends AppCompatActivity {
                 urlConnection.setRequestProperty("X-RapidAPI-Key", "d35f5d26e1mshafc3e3ad636a793p1f9ef0jsnb85767fe0bf6");
                 urlConnection.connect();
 
+                URL url2 = new URL("https://country-by-api-ninjas.p.rapidapi.com/v1/country?name=" + strings[1]);
+                urlConnection2 = (HttpURLConnection) url.openConnection();
+                urlConnection2.setRequestMethod("GET");
+                urlConnection2.setRequestProperty("X-RapidAPI-Key", "d35f5d26e1mshafc3e3ad636a793p1f9ef0jsnb85767fe0bf6");
+                urlConnection2.connect();
+
                 InputStream in = urlConnection.getInputStream();
                 if(in == null) return null;
 
+                InputStream in2 = urlConnection2.getInputStream();
+                if(in2 == null) return null;
+
                 reader = new BufferedReader(new InputStreamReader(in));
                 stat1 = getStringFromBuffer(reader);
+
+                reader2 = new BufferedReader(new InputStreamReader(in2));
+                stat2 = getStringFromBuffer(reader2);
             }
             catch(Exception e)
             {
@@ -87,11 +100,13 @@ public class MainActivity extends AppCompatActivity {
             finally
             {
                 if(urlConnection != null) urlConnection.disconnect();
-                if(reader != null)
+                if(urlConnection2 != null) urlConnection2.disconnect();
+                if(reader != null && reader2 != null)
                 {
                     try
                     {
                         reader.close();
+                        reader2.close();
                     }
                     catch(Exception e)
                     {
@@ -99,10 +114,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
-
+            s1 = stat1;
+            s2 = stat2;
             return stat1;
-
-            //TODO: FIX
         }
 
         @Override
@@ -114,7 +128,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("country_1", c1);
                 intent.putExtra("country_2", c2);
                 intent.putExtra("chosenStat", sStat);
-                intent.putExtra("stat_1", s);
+                intent.putExtra("stat_1", s1);
+                intent.putExtra("stat_2", s2);
                 startActivity(intent);
 
         }
