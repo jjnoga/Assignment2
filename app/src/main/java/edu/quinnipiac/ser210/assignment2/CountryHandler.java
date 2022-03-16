@@ -1,5 +1,6 @@
 package edu.quinnipiac.ser210.assignment2;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,8 +22,9 @@ public class CountryHandler {
     }
 
     public String getCountryCapital(String countryCapitalJsonStr) throws JSONException {
-        JSONObject countryCapitalJSONObj = new JSONObject(countryCapitalJsonStr);
-        return countryCapitalJSONObj.getString("capital");
+        //JSONObject countryCapitalJSONObj = new JSONObject(countryCapitalJsonStr);
+        JSONArray countryArray = new JSONArray(countryCapitalJsonStr);
+        return countryArray.getJSONObject(0).getString("capital");
     }
 
 }

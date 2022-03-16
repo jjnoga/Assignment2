@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     CountryHandler countryHandler = new CountryHandler();
     Spinner country1, country2, stat;
     String c1, c2, sStat;
-    private String url1 = "country-by-api-ninjas.p.rapidapi.com/v1/";
+    private String url1 = "https://api.api-ninjas.com/v1/country?name=";
     private String key = null; //TODO:  Add key properly.  Github yelled at me for it before.
 
     @Override
@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
     class FetchCountryStat extends AsyncTask<String, Void, String>
     {
-        String stat1, stat2;
 
         @SuppressLint("RestrictedApi")
         @Override
@@ -63,18 +62,22 @@ public class MainActivity extends AppCompatActivity {
         {
             HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
+            String stat1 = "";
+            String stat2 = "";
             try
             {
-                URL url = new URL(url1 + strings[0]);
+                //String str = strings[0].replaceAll(" ", "_");
+                URL url = new URL("https://country-by-api-ninjas.p.rapidapi.com/v1/country?name=" + strings[0]);
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
-                urlConnection.setRequestProperty("X-RapidAPI-Key", key);
+                urlConnection.setRequestProperty("X-RapidAPI-Key", "d35f5d26e1mshafc3e3ad636a793p1f9ef0jsnb85767fe0bf6");
                 urlConnection.connect();
 
                 InputStream in = urlConnection.getInputStream();
                 if(in == null) return null;
 
                 reader = new BufferedReader(new InputStreamReader(in));
+                stat1 = getStringFromBuffer(reader);
             }
             catch(Exception e)
             {
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            return null;
+            return stat1;
 
             //TODO: FIX
         }
@@ -105,37 +108,39 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s)
         {
-            Intent intent = new Intent(MainActivity.this, CountryActivity.class);
+                Intent intent = new Intent(MainActivity.this, CountryActivity.class);
 
 
-            intent.putExtra("country_1", c1);
-            intent.putExtra("country_2", c2);
-            intent.putExtra("chosenStat", sStat);
-            startActivity(intent);
+                intent.putExtra("country_1", c1);
+                intent.putExtra("country_2", c2);
+                intent.putExtra("chosenStat", sStat);
+                startActivity(intent);
 
         }
 
-        private String getStringFromBuffer(BufferedReader reader)
+        private String getStringFromBuffer(BufferedReader reader) throws Exception
         {
             StringBuffer buffer = new StringBuffer();
             String line;
+
+            while((line = reader.readLine()) != null)
+            {
+                buffer.append(line + "\n");
+            }
+
             if(reader != null)
             {
                 try
                 {
-                    while((line = reader.readLine()) != null)
-                    {
-                        buffer.append(line + "\n");
-                    }
                     reader.close();
-                    return countryHandler.getCountryCapital(buffer.toString());
+
                 }
                 catch(Exception e)
                 {
                     return null;
                 }
             }
-            else return null;
+            return countryHandler.getCountryCapital(buffer.toString());
         }
 
     }
