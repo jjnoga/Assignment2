@@ -2,32 +2,32 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/country_activity"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:theme="@style/Theme.Assignment2.NoActionBar"
 	tools:context=".CountryActivity">
 
 	<TextView
 		android:id="@+id/you_selected"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="16dp"
+		android:layout_marginTop="17dp"
 		android:text="@string/you_selected"
 		android:textSize="50dp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 	<TextView
 		android:id="@+id/statName"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginStart="103dp"
-		android:layout_marginTop="10dp"
-		android:layout_marginEnd="104dp"
+		android:layout_marginStart="86dp"
+		android:layout_marginTop="14dp"
 		android:text="@string/placeholder"
 		android:textSize="25dp"
-		app:layout_constraintEnd_toEndOf="@+id/stat1"
-		app:layout_constraintStart_toStartOf="@+id/country1"
+		app:layout_constraintStart_toStartOf="@+id/you_selected"
 		app:layout_constraintTop_toBottomOf="@+id/you_selected" />
 
 	<TextView
@@ -35,7 +35,6 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="41dp"
-		android:text="@string/placeholder"
 		android:textSize="25dp"
 		app:layout_constraintBottom_toBottomOf="@+id/stat1"
 		app:layout_constraintStart_toStartOf="parent"
@@ -46,43 +45,68 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="41dp"
-		android:text="@string/placeholder"
+		android:layout_marginTop="232dp"
+		android:layout_marginBottom="232dp"
 		android:textSize="25dp"
-		app:layout_constraintBaseline_toBaselineOf="@+id/stat2"
-		app:layout_constraintStart_toStartOf="parent" />
+		app:layout_constraintBottom_toBottomOf="@+id/button2"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/you_selected" />
 
 	<TextView
 		android:id="@+id/stat1"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="66dp"
-		android:text="@string/placeholder"
+		android:layout_marginStart="20dp"
+		android:layout_marginTop="53dp"
 		android:textSize="25dp"
-		app:layout_constraintEnd_toEndOf="@+id/stat2"
-		app:layout_constraintStart_toStartOf="@+id/stat2"
+		app:layout_constraintStart_toEndOf="@+id/statName"
 		app:layout_constraintTop_toBottomOf="@+id/statName" />
 
 	<TextView
 		android:id="@+id/stat2"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="234dp"
-		android:layout_marginEnd="75dp"
-		android:layout_marginBottom="235dp"
-		android:text="@string/placeholder"
+		android:layout_marginTop="232dp"
+		android:layout_marginBottom="232dp"
 		android:textSize="25dp"
 		app:layout_constraintBottom_toBottomOf="@+id/button2"
-		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="@+id/stat1"
 		app:layout_constraintTop_toBottomOf="@+id/you_selected" />
 
 	<Button
 		android:id="@+id/button2"
 		android:layout_width="155dp"
 		android:layout_height="84dp"
-		android:layout_marginBottom="145dp"
-		android:text="@string/back"
+		android:layout_marginBottom="92dp"
 		android:onClick="goBack"
+		android:text="@string/back"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<androidx.appcompat.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="1dp"
+		android:layout_marginTop="1dp"
+		android:layout_marginEnd="1dp"
+		android:background="?attr/colorPrimary"
+		android:minHeight="?attr/actionBarSize"
+		android:theme="?attr/actionBarTheme"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:id="@+id/apiInfo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginBottom="16dp"
+		android:gravity="center"
+		android:text=""
+		android:autoLink="web"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

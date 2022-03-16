@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/main_menu"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context=".CountryActivity">
+	<item
+		android:id="@+id/share"
+		android:orderInCategory="100"
+		android:title="Share"
+		app:showAsAction="ifRoom"
+		app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"></item>
+
+	<item
+		android:id="@+id/change_background"
+		android:orderInCategory="200"
+		android:icon="@mipmap/background"
+		android:title="Change Background"
+		app:showAsAction="ifRoom"></item>
+
+	<item
+		android:id="@+id/help"
+		android:orderInCategory="300"
+		android:icon="@mipmap/help"
+		android:title="Help"
+		app:showAsAction="ifRoom"></item>
+</menu>
