@@ -20,10 +20,12 @@ import androidx.core.view.MenuItemCompat;
 
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class CountryActivity extends AppCompatActivity {
 
     private boolean blueMode, helping = false;
-    private String country1, country2, stat1, stat2;
+    private String country1, country2, stat1, stat2, sStat;
     private ShareActionProvider provider;
 
     @Override
@@ -36,16 +38,19 @@ public class CountryActivity extends AppCompatActivity {
 
         country1 = (String) getIntent().getExtras().get("country_1");
         country2 = (String) getIntent().getExtras().get("country_2");
-        stat1 = (String) getIntent().getExtras().get("sStat");
+        sStat = (String) getIntent().getExtras().get("chosenStat");
+        stat1 = (String) getIntent().getExtras().get("stat_1");
         stat2 = (String) getIntent().getExtras().get("sStat");
 
         TextView c1 = (TextView) findViewById(R.id.country1);
         TextView c2 = (TextView) findViewById(R.id.country2);
+        TextView statName = (TextView) findViewById(R.id.statName);
         TextView s1 = (TextView) findViewById(R.id.stat1);
         TextView s2 = (TextView) findViewById(R.id.stat2);
 
         c1.setText(country1);
         c2.setText(country2);
+        statName.setText(sStat);
         s1.setText(stat1);
         s2.setText(stat2);
 

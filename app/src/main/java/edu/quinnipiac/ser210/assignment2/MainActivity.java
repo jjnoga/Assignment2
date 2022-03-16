@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("country_1", c1);
                 intent.putExtra("country_2", c2);
                 intent.putExtra("chosenStat", sStat);
+                intent.putExtra("stat_1", s);
                 startActivity(intent);
 
         }
