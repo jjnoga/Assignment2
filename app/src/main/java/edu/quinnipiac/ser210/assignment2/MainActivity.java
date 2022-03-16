@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -30,12 +31,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Initialize the spinner instance variables
         country1 = (Spinner) findViewById(R.id.spinner1);
         country2 = (Spinner) findViewById(R.id.spinner2);
         stat = (Spinner) findViewById(R.id.spinnerStat);
 
+        //Set the adapters of country and stat spinners
         ArrayAdapter<String> countryAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countryHandler.countries);
-        //TODO: Add countries and stats from API to spinner
         country1.setAdapter(countryAdapter);
         country2.setAdapter(countryAdapter);
 
@@ -43,18 +46,18 @@ public class MainActivity extends AppCompatActivity {
         stat.setAdapter(statAdapter);
     }
 
+    //Method for clicking the button
     public void onClick(View view)
     {
         c1 = (String) country1.getSelectedItem();
         c2 = (String) country2.getSelectedItem();
         sStat = (String) stat.getSelectedItem();
         new FetchCountryStat().execute(c1, c2, sStat);
-
     }
 
     class FetchCountryStat extends AsyncTask<String, Void, String>
     {
-
+        //Retrieves stats from API
         @SuppressLint("RestrictedApi")
         @Override
         protected String doInBackground(String... strings)
@@ -75,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 urlConnection.connect();
 
                 URL url2 = new URL("https://country-by-api-ninjas.p.rapidapi.com/v1/country?name=" + strings[1]);
-                urlConnection2 = (HttpURLConnection) url.openConnection();
+                urlConnection2 = (HttpURLConnection) url2.openConnection();
                 urlConnection2.setRequestMethod("GET");
                 urlConnection2.setRequestProperty("X-RapidAPI-Key", "d35f5d26e1mshafc3e3ad636a793p1f9ef0jsnb85767fe0bf6");
                 urlConnection2.connect();
@@ -124,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
         {
                 Intent intent = new Intent(MainActivity.this, CountryActivity.class);
 
-
                 intent.putExtra("country_1", c1);
                 intent.putExtra("country_2", c2);
                 intent.putExtra("chosenStat", sStat);
@@ -149,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
                 try
                 {
                     reader.close();
-
                 }
                 catch(Exception e)
                 {
