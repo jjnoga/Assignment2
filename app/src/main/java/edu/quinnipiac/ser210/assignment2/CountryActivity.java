@@ -63,7 +63,6 @@ public class CountryActivity extends AppCompatActivity {
         s1.setText(stat1);
         s2.setText(stat2);
 
-
     }
 
     @SuppressLint("ResourceType")
