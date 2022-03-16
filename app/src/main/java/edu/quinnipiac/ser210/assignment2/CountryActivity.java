@@ -1,3 +1,12 @@
+/*  CountryActivity.java
+    Authors: Aiden Rosen and Joseph Noga
+    Class: SER210
+    Professor: Rehab ElKharboutly
+    Date: 16 March 2022
+    Description: Provides the screen necessary to display the comparison results between the two
+    selected countries according to the selected stat. Also sets up the ActionBar menu.
+ */
+
 package edu.quinnipiac.ser210.assignment2;
 
 import androidx.annotation.NonNull;
