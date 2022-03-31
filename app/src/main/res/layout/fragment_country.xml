@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/country_fragment"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:theme="@style/Theme.Assignment2.NoActionBar"
+	tools:context=".CountryFragment">
+
+	<TextView
+		android:id="@+id/you_selected"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="17dp"
+		android:text="@string/you_selected"
+		android:textSize="50dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+	<TextView
+		android:id="@+id/statName"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="86dp"
+		android:layout_marginTop="14dp"
+		android:text="@string/placeholder"
+		android:textSize="25dp"
+		app:layout_constraintStart_toStartOf="@+id/you_selected"
+		app:layout_constraintTop_toBottomOf="@+id/you_selected" />
+
+	<TextView
+		android:id="@+id/country1"
+		android:layout_width="180dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="41dp"
+		android:textSize="25dp"
+		app:layout_constraintBottom_toBottomOf="@+id/stat1"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/stat1" />
+
+	<TextView
+		android:id="@+id/country2"
+		android:layout_width="180dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="41dp"
+		android:textSize="25dp"
+		app:layout_constraintBottom_toBottomOf="@+id/stat2"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/stat2" />
+
+	<TextView
+		android:id="@+id/stat1"
+		android:layout_width="120dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="9dp"
+		android:layout_marginTop="52dp"
+		android:textSize="20dp"
+		app:layout_constraintStart_toEndOf="@+id/statName"
+		app:layout_constraintTop_toBottomOf="@+id/statName" />
+
+	<TextView
+		android:id="@+id/stat2"
+		android:layout_width="120dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="232dp"
+		android:layout_marginBottom="232dp"
+		android:textSize="20dp"
+		app:layout_constraintBottom_toBottomOf="@+id/button2"
+		app:layout_constraintStart_toStartOf="@+id/stat1"
+		app:layout_constraintTop_toBottomOf="@+id/you_selected" />
+
+	<Button
+		android:id="@+id/button2"
+		android:layout_width="155dp"
+		android:layout_height="84dp"
+		android:layout_marginBottom="92dp"
+		android:onClick="goBack"
+		android:text="@string/back"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<androidx.appcompat.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="1dp"
+		android:layout_marginTop="1dp"
+		android:layout_marginEnd="1dp"
+		android:background="?attr/colorPrimary"
+		android:minHeight="?attr/actionBarSize"
+		android:theme="?attr/actionBarTheme"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:id="@+id/apiInfo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginBottom="16dp"
+		android:autoLink="web"
+		android:gravity="center"
+		android:text=""
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
