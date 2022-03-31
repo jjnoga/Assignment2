@@ -8,4 +8,6 @@
 	<string name="placeholder">Nothing</string>
 	<string name="back">Go back</string>
 	<string name="welcome">Welcome! Please select 2 countries and a statistic to compare.</string>
+	<!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
