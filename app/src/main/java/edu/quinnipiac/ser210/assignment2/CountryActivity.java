@@ -41,94 +41,6 @@ public class CountryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country);
-
-        //Initialize and set the toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        //Get the data from the intent
-        country1 = (String) getIntent().getExtras().get("country_1");
-        country2 = (String) getIntent().getExtras().get("country_2");
-        sStat = (String) getIntent().getExtras().get("chosenStat");
-        stat1 = (String) getIntent().getExtras().get("stat_1");
-        stat2 = (String) getIntent().getExtras().get("stat_2");
-
-        //Assign the TextViews to java variables
-        TextView c1 = (TextView) findViewById(R.id.country1);
-        TextView c2 = (TextView) findViewById(R.id.country2);
-        TextView statName = (TextView) findViewById(R.id.statName);
-        TextView s1 = (TextView) findViewById(R.id.stat1);
-        TextView s2 = (TextView) findViewById(R.id.stat2);
-
-        //Combine everything and set the text
-        c1.setText(country1 + ":");
-        c2.setText(country2 + ":");
-        statName.setText(sStat);
-        s1.setText(stat1);
-        s2.setText(stat2);
-
-    }
-
-    //Inflates the toolbar with the menu options
-    @SuppressLint("ResourceType")
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        MenuItem item = menu.findItem(R.id.share);
-        provider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
-        setShareActionIntent();
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    //Activates the share button
-    private void setShareActionIntent()
-    {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, "Look at this awesome app I used to compare countries' statistics!");
-        provider.setShareIntent(intent);
-    }
-
-    //Logic for determining which toolbar icon is pressed, and what to do after its pressed
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item)
-    {
-        int id = item.getItemId();
-        switch(id)
-        {
-            case R.id.change_background: //Change background code
-                View thisView = (View) findViewById(R.id.country_activity);
-                if(blueMode)
-                {
-                    thisView.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                    blueMode = false;
-                }
-                else
-                {
-                    thisView.setBackgroundColor(Color.parseColor("#00FFFF"));
-                    blueMode = true;
-                }
-                return true;
-            case R.id.help: //Help button code
-                TextView help = (TextView) findViewById(R.id.apiInfo);
-                if(helping)
-                {
-                    help.setText("");
-                    helping = false;
-                }
-                else
-                {
-                    //Makes the help link clickable in app
-                    help.setClickable(true);
-                    help.setMovementMethod(LinkMovementMethod.getInstance());
-                    String link = "https://rapidapi.com/apininjas/api/country-by-api-ninjas/";
-                    help.setText(Html.fromHtml(link, Html.FROM_HTML_MODE_COMPACT));
-                    helping = true;
-                }
-                return true;
-            default: return super.onOptionsItemSelected(item);
-        }
     }
 
     //Returns to MainActivity
@@ -137,4 +49,6 @@ public class CountryActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+        /* */
 }

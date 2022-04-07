@@ -31,27 +31,11 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.Listener {
 
-    CountryHandler countryHandler = new CountryHandler();
-    Spinner country1, country2, stat;
-
     //"constructor" of the activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        country1 = (Spinner) this.findViewById(R.id.spinner1);
-        country2 = (Spinner) this.findViewById(R.id.spinner2);
-        stat = (Spinner) this.findViewById(R.id.spinnerStat);
-
-        //add country names to country spinners
-        ArrayAdapter<String> countryAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countryHandler.countries);
-        country1.setAdapter(countryAdapter);
-        country2.setAdapter(countryAdapter);
-
-        //add stat options to stat spinner
-        ArrayAdapter<String> statAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countryHandler.stats);
-        stat.setAdapter(statAdapter);
     }
 
 
