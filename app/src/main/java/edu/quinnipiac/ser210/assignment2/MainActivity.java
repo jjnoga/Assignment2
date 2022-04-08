@@ -29,7 +29,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class MainActivity extends AppCompatActivity implements MainFragment.Listener {
+public class MainActivity extends AppCompatActivity implements MainFragment.Listener, MainFragmentLand.Listener {
 
     //"constructor" of the activity
     @Override

@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/aiden/StudioProjects/Assignment2/app/src/main/res/layout-land/activity_country.xml" value="0.38958333333333334" />
+        <entry key="..\:/Users/aiden/StudioProjects/Assignment2/app/src/main/res/layout-land/activity_main.xml" value="0.3531746031746032" />
+        <entry key="..\:/Users/aiden/StudioProjects/Assignment2/app/src/main/res/layout-land/fragment_country.xml" value="0.38958333333333334" />
+        <entry key="..\:/Users/aiden/StudioProjects/Assignment2/app/src/main/res/layout-land/fragment_main.xml" value="0.38958333333333334" />
+        <entry key="..\:/Users/aiden/StudioProjects/Assignment2/app/src/main/res/layout/activity_country.xml" value="0.338768115942029" />
+        <entry key="..\:/Users/aiden/StudioProjects/Assignment2/app/src/main/res/layout/activity_main.xml" value="0.5744791666666667" />
+        <entry key="..\:/Users/aiden/StudioProjects/Assignment2/app/src/main/res/layout/fragment_country.xml" value="0.338768115942029" />
+        <entry key="..\:/Users/aiden/StudioProjects/Assignment2/app/src/main/res/layout/fragment_main.xml" value="0.32760416666666664" />
+        <entry key="..\:/Users/aiden/StudioProjects/Assignment2/app/src/main/res/layout/fragment_main_land.xml" value="0.338768115942029" />
+        <entry key="..\:/Users/aiden/StudioProjects/Assignment2/app/src/main/res/menu/menu_main.xml" value="0.4171875" />
         <entry key="..\:/Users/josep/OneDrive/Documents/Quinnipiac/Spring 2022/SER210/Assignment2Clone/app/src/main/res/layout/activity_country.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/josep/OneDrive/Documents/Quinnipiac/Spring 2022/SER210/Assignment2Clone/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/tbrke/Desktop/School/Spring2022/SER210/Assignment2-2/Assignment2-SER210/app/src/main/res/drawable/globe.xml" value="0.2265" />
