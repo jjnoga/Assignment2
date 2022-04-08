@@ -36,12 +36,19 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MainFragment mainFragment = new MainFragment();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container, mainFragment);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
 
 
     @Override
     public void itemClicked(String c1, String c2, String sStat, String s1, String s2) {
+        /*
         View fragmentContainer = findViewById(R.id.fragment_container);
         if (fragmentContainer != null)
         {
@@ -51,14 +58,15 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
             ft.addToBackStack(null);
             ft.commit();
         } else {
-            Intent intent = new Intent(this, CountryActivity.class);
-            intent.putExtra("country_1", c1);
-            intent.putExtra("country_2", c2);
-            intent.putExtra("chosenStat", sStat);
-            intent.putExtra("stat_1", s1);
-            intent.putExtra("stat_2", s2);
-            startActivity(intent);
 
-        }
+
+        } */
+        Intent intent = new Intent(this, CountryActivity.class);
+        intent.putExtra("country_1", c1);
+        intent.putExtra("country_2", c2);
+        intent.putExtra("chosenStat", sStat);
+        intent.putExtra("stat_1", s1);
+        intent.putExtra("stat_2", s2);
+        startActivity(intent);
     }
 }

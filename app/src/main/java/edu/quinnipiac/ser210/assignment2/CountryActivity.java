@@ -26,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.widget.ShareActionProvider;
 import androidx.core.view.MenuItemCompat;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.widget.TextView;
 
@@ -41,6 +42,12 @@ public class CountryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country);
+
+        CountryFragment countryFragment = new CountryFragment();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container, countryFragment);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
     //Returns to MainActivity
