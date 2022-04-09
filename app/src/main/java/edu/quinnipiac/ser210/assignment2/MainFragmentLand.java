@@ -28,6 +28,8 @@ public class MainFragmentLand extends Fragment
 	String c1, c2, sStat, s1, s2;
 	private String url1 = "https://country-by-api-ninjas.p.rapidapi.com/v1/country?name=";
 
+	public MainFragmentLand() {}
+
 	interface Listener {
 		void itemClicked(String c1, String c2, String sStat, String s1, String s2);
 	}
