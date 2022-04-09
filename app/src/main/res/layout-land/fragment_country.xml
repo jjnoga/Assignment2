@@ -10,26 +10,26 @@
 
 	<TextView
 		android:id="@+id/you_selected"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="16dp"
-		android:layout_marginTop="9dp"
-		android:layout_marginEnd="52dp"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_marginStart="27dp"
+		android:layout_marginEnd="22dp"
 		android:text="@string/you_selected"
-		android:textSize="50dp"
+		android:textSize="20dp"
+		app:layout_constraintBottom_toBottomOf="@+id/statName"
 		app:layout_constraintEnd_toStartOf="@+id/statName"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+		app:layout_constraintTop_toTopOf="@+id/statName" />
 
 	<TextView
 		android:id="@+id/statName"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
-		android:layout_marginEnd="229dp"
-		android:layout_marginBottom="39dp"
+		android:layout_marginEnd="41dp"
+		android:layout_marginBottom="23dp"
 		android:text="@string/placeholder"
-		android:textSize="25dp"
-		app:layout_constraintBottom_toTopOf="@+id/country1"
+		android:textSize="20dp"
+		app:layout_constraintBottom_toTopOf="@+id/stat1"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toEndOf="@+id/you_selected"
 		app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -37,71 +37,65 @@
 	<TextView
 		android:id="@+id/country1"
 		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="27dp"
-		android:layout_marginEnd="38dp"
-		android:textSize="25dp"
-		app:layout_constraintBottom_toTopOf="@+id/button2"
+		android:layout_height="100dp"
+		android:layout_marginStart="25dp"
+		android:layout_marginTop="110dp"
+		android:layout_marginEnd="12dp"
+		android:layout_marginBottom="110dp"
+		android:textSize="20dp"
+		app:layout_constraintBottom_toTopOf="@+id/apiInfo"
 		app:layout_constraintEnd_toStartOf="@+id/stat1"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/statName" />
+		app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 	<TextView
 		android:id="@+id/country2"
 		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="27dp"
-		android:layout_marginEnd="34dp"
-		android:layout_marginBottom="60dp"
-		android:textSize="25dp"
-		app:layout_constraintBottom_toTopOf="@+id/apiInfo"
+		android:layout_height="74dp"
+		android:layout_marginStart="26dp"
+		android:layout_marginEnd="12dp"
+		android:textSize="20dp"
 		app:layout_constraintEnd_toStartOf="@+id/stat2"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/button2" />
+		app:layout_constraintTop_toBottomOf="@+id/country1" />
 
 	<TextView
 		android:id="@+id/stat1"
 		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:layout_marginEnd="366dp"
+		android:layout_height="0dp"
+		android:layout_marginEnd="4dp"
+		android:layout_marginBottom="7dp"
 		android:textSize="20dp"
-		app:layout_constraintBottom_toBottomOf="@+id/country1"
+		app:layout_constraintBottom_toTopOf="@+id/stat2"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toEndOf="@+id/country1" />
+		app:layout_constraintStart_toEndOf="@+id/country1"
+		app:layout_constraintTop_toBottomOf="@+id/statName" />
 
 	<TextView
 		android:id="@+id/stat2"
 		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:layout_marginEnd="366dp"
+		android:layout_height="0dp"
+		android:layout_marginEnd="5dp"
+		android:layout_marginBottom="45dp"
 		android:textSize="20dp"
+		app:layout_constraintBottom_toTopOf="@+id/apiInfo"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toEndOf="@+id/country2"
-		app:layout_constraintTop_toTopOf="@+id/country2" />
-
-	<Button
-		android:id="@+id/button2"
-		android:layout_width="152dp"
-		android:layout_height="0dp"
-		android:layout_marginStart="64dp"
-		android:layout_marginBottom="7dp"
-		android:onClick="goBack"
-		android:text="@string/back"
-		app:layout_constraintBottom_toTopOf="@+id/country2"
-		app:layout_constraintStart_toEndOf="@+id/stat1"
-		app:layout_constraintTop_toBottomOf="@+id/country1" />
+		app:layout_constraintTop_toBottomOf="@+id/stat1" />
 
 	<androidx.appcompat.widget.Toolbar
 		android:id="@+id/toolbar"
-		android:layout_width="729dp"
+		android:layout_width="0dp"
 		android:layout_height="wrap_content"
-		android:layout_marginBottom="28dp"
+		android:layout_marginStart="1dp"
+		android:layout_marginEnd="1dp"
+		android:layout_marginBottom="9dp"
 		android:background="?attr/colorPrimary"
 		android:minHeight="?attr/actionBarSize"
 		android:theme="?attr/actionBarTheme"
 		app:layout_constraintBottom_toTopOf="@+id/statName"
-		app:layout_constraintEnd_toStartOf="@+id/statName"
-		app:layout_constraintStart_toStartOf="@+id/statName"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<TextView
@@ -115,5 +109,5 @@
 		android:text=""
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/country2" />
+		app:layout_constraintTop_toBottomOf="@+id/stat2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -194,7 +194,7 @@ public class MainFragmentLand extends Fragment
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState)
 	{
-		View view = inflater.inflate(R.layout.activity_main,
+		View view = inflater.inflate(R.layout.fragment_main,
 				container, false);
 		country1 = (Spinner) view.findViewById(R.id.spinner1);
 		country2 = (Spinner) view.findViewById(R.id.spinner2);
