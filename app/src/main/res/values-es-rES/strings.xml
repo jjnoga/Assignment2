@@ -1,0 +1,13 @@
+<resources>
+	<string name="app_name">Assignment2</string>
+	<string name="select_country1">Seleccione el primer país:</string>
+	<string name="select_country2">Seleccionar segundo país:</string>
+	<string name="select_stat">Seleccionar estadística</string>
+	<string name="button_text">Comparar países</string>
+	<string name="you_selected">Usted seleccionó:</string>
+	<string name="placeholder">Nada</string>
+	<string name="back">Regresa</string>
+	<string name="welcome">¡Bienvenido! Seleccione 2 países y una estadística para comparar.</string>
+	<!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
